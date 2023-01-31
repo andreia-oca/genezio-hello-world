@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - "releases/*"
 
 jobs:
   test:
@@ -19,3 +18,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - run: genezio account
       - run: genezio ls
+      - run: cd server && genezio deploy
